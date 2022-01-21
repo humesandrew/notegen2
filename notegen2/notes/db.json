@@ -1,0 +1,19 @@
+[
+    {
+        "title":"Note 1",
+        "text":"Go to the grocery store",
+        "id": 1
+    },
+
+    {
+        "title": "Note 2",
+        "text": "Eliminate world hunger.",
+        "id": 2
+    },
+
+    {
+        "title": "Note 3",
+        "text": "Learn coding.",
+        "id": 3
+    }
+]
