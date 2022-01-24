@@ -1,17 +1,19 @@
 const express = require('express');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./public'));
 
-const notes = require('./notes/db.json');
+// const notes = require('./notes/db.json');
+/// app.get(path.join(__dirname, 'notes.html')); et cetera/////
 
 
-
-
-
-    app.listen(PORT, () => console.log('Server started on port: 3001'));
+app.use('/api', apiRoutes);
+    app.use('/', htmlRoutes);
 
 app.get('/api/notes', (req, res) => {
    console.log(req.method, " request received");
@@ -24,7 +26,7 @@ app.post('/api/notes', (req, res) => {
 })
 
 
-
+app.listen(PORT, () => console.log('Server started on port: 3001'));
 
 
 
